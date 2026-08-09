@@ -297,6 +297,58 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   color: var(--text-faint);
 }
 
+/* -------- odznaky obchodů --------
+   Zástupné, dokud nejsou odkazy. Před vydáním se **musí vyměnit za
+   oficiální artwork** Applu a Googlu: obojí má závazná pravidla pro
+   použití svých značek a vlastní kresba loga je porušuje. */
+.stores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.store {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.store:hover,
+.store:focus-visible {
+  border-color: rgba(224, 180, 94, 0.5);
+  background: rgba(224, 180, 94, 0.06);
+}
+
+.store-mark {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.store-text { display: flex; flex-direction: column; line-height: 1.15; }
+
+.store-small {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.store-big {
+  font-family: var(--display);
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}
+
 .hero-visual {
   display: flex;
   justify-content: center;
