@@ -146,11 +146,41 @@ h1, h2, h3 {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
 }
 
-.brand svg { width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0; }
+/* Znak má vlastní tmavé pozadí (je to skutečná ikona aplikace), takže na
+   tmavé stránce splýval. Nekreslí se proto světlejší podklad — tím by
+   přestal být tou ikonou — ale **mosazný vlas kolem a jemná záře pod ním**.
+   Prsten dodá hranu, záře odlepí znak od pozadí. */
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  flex-shrink: 0;
+  box-shadow:
+    0 0 0 1px rgba(224, 180, 94, 0.32),
+    0 2px 16px rgba(224, 180, 94, 0.14);
+  transition: box-shadow 0.2s ease;
+}
+
+.brand:hover .brand-mark,
+.brand:focus-visible .brand-mark {
+  box-shadow:
+    0 0 0 1px rgba(224, 180, 94, 0.55),
+    0 2px 22px rgba(224, 180, 94, 0.24);
+}
+
+/* V patičce je znak menší a prsten slabší — je to tečka za stránkou,
+   ne druhá hlavička. */
+.footer-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(224, 180, 94, 0.2);
+}
 
 .brand span {
   font-family: var(--display);
@@ -490,6 +520,8 @@ footer a { text-decoration: none; color: var(--text-faint); }
 footer a:hover, footer a:focus-visible { color: var(--brass); }
 
 .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+.footer-brand { display: flex; align-items: center; gap: 12px; }
 
 /* -------- scroll reveal (progresivní vylepšení) -------- */
 .reveal {
