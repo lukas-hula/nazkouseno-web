@@ -92,32 +92,6 @@ h1, h2, h3 {
 
 .accent { color: var(--brass); }
 
-/* -------- kosočtverec mezi vlasovými linkami -------- */
-.ornament {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-}
-
-.ornament::before,
-.ornament::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--line);
-}
-
-.ornament span {
-  width: 7px;
-  height: 7px;
-  background: var(--brass);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-}
-
-.ornament--tight { max-width: 132px; margin: 28px auto; }
-
 /* -------- dvojitá vlasová linka -------- */
 .double-rule {
   border-top: 1px solid var(--line);
@@ -134,6 +108,19 @@ h1, h2, h3 {
   backdrop-filter: blur(14px);
   background: rgba(18, 16, 14, 0.72);
   border-bottom: 1px solid var(--line);
+}
+
+/* Dvojitá vlasová linka, jako dělítko v divadelním programu — tentýž
+   motiv, který aplikace používá pod nadpisy (`DoubleRule`). Stojí to
+   dva pixely výšky a hlavičku to spojí se zbytkem sazby. */
+.site-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  background: var(--line);
 }
 
 .site-header .container {
@@ -189,15 +176,44 @@ h1, h2, h3 {
   color: var(--text);
 }
 
+/* Prostrkané verzálky, stejně jako popisky v aplikaci. Hlavička tím mluví
+   jazykem produktu místo výchozím 14px bezpatkovým písmem, které vypadá
+   stejně na každém webu — a nestojí to ani pixel výšky navíc. */
 .nav-links {
   display: none;
-  gap: 28px;
-  font-size: 14px;
-  color: var(--text-muted);
+  gap: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
 }
 
-.nav-links a { text-decoration: none; transition: color 0.15s ease; }
-.nav-links a:hover, .nav-links a:focus-visible { color: var(--brass); }
+.nav-links a {
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.18s ease;
+}
+
+/* Podtržení vyjíždí zprostřed, ne celé naráz — drobnost, ale je to rozdíl
+   mezi „odkaz změnil barvu" a „někdo to navrhl". */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  height: 1px;
+  background: var(--brass);
+  transition: left 0.18s ease, right 0.18s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible { color: var(--brass); }
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after { left: 0; right: 0; }
 
 @media (min-width: 720px) {
   .nav-links { display: flex; }
