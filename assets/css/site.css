@@ -1,0 +1,533 @@
+/* Nazkoušeno — web
+   Barvy a písma jsou 1:1 z `app/lib/theme/app_theme.dart` (tmavé téma),
+   ne odhadnuté od oka. Web zůstává natrvalo tmavý — stejně jako obchodní
+   screenshoty, ze kterých vychází — aby appka a web působily jako jedna
+   věc, ne jako dvě různé identity. */
+
+@font-face {
+  font-family: 'Jost';
+  src: url('../fonts/Jost.ttf') format('truetype');
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter.ttf') format('truetype');
+  font-weight: 300 800;
+  font-display: swap;
+}
+
+:root {
+  --bg: #12100E;
+  --surface: #1E1A17;
+  --line: #3D342C;
+  --text: #F4EEE5;
+  --text-muted: #C9BDAB;
+  --text-faint: #A29686;
+  --brass: #E0B45E;
+  --on-brass: #1A1408;
+  --carmine: #D1685E;
+
+  --display: 'Jost', serif;
+  --ui: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+body {
+  background:
+    radial-gradient(120% 60% at 50% -10%, #241d15 0%, rgba(18, 16, 14, 0) 60%),
+    radial-gradient(90% 50% at 110% 10%, #1d1913 0%, rgba(18, 16, 14, 0) 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--ui);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container--narrow {
+  max-width: 760px;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+/* -------- prostrkané verzálky, jako jméno v programu -------- */
+.eyebrow {
+  font-family: var(--ui);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.muted { color: var(--text-muted); }
+
+.accent { color: var(--brass); }
+
+/* -------- kosočtverec mezi vlasovými linkami -------- */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.ornament span {
+  width: 7px;
+  height: 7px;
+  background: var(--brass);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.ornament--tight { max-width: 132px; margin: 28px auto; }
+
+/* -------- dvojitá vlasová linka -------- */
+.double-rule {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  height: 3px;
+  margin: 20px 0;
+}
+
+/* -------- hlavička -------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(14px);
+  background: rgba(18, 16, 14, 0.72);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand svg { width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0; }
+
+.brand span {
+  font-family: var(--display);
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
+.nav-links {
+  display: none;
+  gap: 28px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.nav-links a { text-decoration: none; transition: color 0.15s ease; }
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--brass); }
+
+@media (min-width: 720px) {
+  .nav-links { display: flex; }
+}
+
+/* -------- tlačítka -------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 28px;
+  border-radius: 3px;
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:hover { opacity: 0.9; }
+.btn:active { transform: scale(0.98); }
+
+.btn--ghost {
+  border-color: var(--brass);
+  color: var(--brass);
+  background: transparent;
+}
+
+.btn--ghost:hover { background: rgba(224, 180, 94, 0.08); }
+
+/* -------- focus, přístupnost -------- */
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+/* -------- hero -------- */
+.hero {
+  padding: 64px 0 96px;
+  overflow: hidden;
+}
+
+.hero .container {
+  display: grid;
+  gap: 56px;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .hero .container { grid-template-columns: 1.1fr 0.9fr; }
+}
+
+.hero-copy h1 {
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 1.06;
+  margin: 18px 0 22px;
+}
+
+.hero-copy p {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 46ch;
+}
+
+.hero-cta {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-note {
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+/* -------- telefonní rámeček -------- */
+.phone {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 40px;
+  overflow: hidden;
+  border: 2px solid #2A241D;
+  background: #0A0908;
+  box-shadow:
+    0 50px 90px rgba(0, 0, 0, 0.55),
+    0 0 0 8px #16130F;
+  /* Ať se rámeček nezmenší pod svůj obsah v úzkém flex/grid sloupci. */
+  flex-shrink: 0;
+}
+
+.phone--float {
+  transform: rotate(-3.2deg);
+}
+
+/* `height: auto` je nutné výslovně — atributy width/height na <img>
+   (kvůli rezervaci místa a CLS) by jinak s `width: 100%` bez odpovídající
+   výšky roztáhly obrázek do jeho HTML atributu, ne poměrně. */
+.phone img { width: 100%; height: auto; display: block; }
+
+/* -------- sekce obecně -------- */
+section { padding: 88px 0; }
+
+.section-head {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 56px;
+}
+
+.section-head h2 {
+  font-size: clamp(30px, 4vw, 42px);
+  margin: 14px 0 16px;
+}
+
+.section-head p {
+  color: var(--text-muted);
+  font-size: 17px;
+}
+
+/* -------- kroky (jak to funguje) -------- */
+.steps {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  gap: 20px;
+}
+
+.step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.step-marker .num {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--brass);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ui);
+  font-size: 14px;
+  color: var(--brass);
+  flex-shrink: 0;
+}
+
+.step-marker .line {
+  width: 1px;
+  flex: 1;
+  background: var(--line);
+  margin: 6px 0;
+}
+
+.step:last-child .step-marker .line { display: none; }
+
+.step-body { padding-bottom: 40px; }
+
+.step-body h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.step-body p { color: var(--text-muted); font-size: 15px; }
+
+/* -------- funkce střídavě se snímky -------- */
+.feature {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 96px;
+}
+
+.feature:last-child { margin-bottom: 0; }
+
+@media (min-width: 780px) {
+  .feature { grid-template-columns: 1fr 1fr; gap: 64px; }
+  .feature--reverse .feature-visual { order: 2; }
+  .feature--reverse .feature-copy { order: 1; }
+}
+
+.feature-visual { display: flex; justify-content: center; }
+
+.feature-copy .eyebrow { display: block; margin-bottom: 12px; }
+
+.feature-copy h3 {
+  font-size: clamp(24px, 3.4vw, 32px);
+  margin-bottom: 14px;
+}
+
+.feature-copy p {
+  color: var(--text-muted);
+  font-size: 16px;
+  max-width: 42ch;
+}
+
+/* -------- pruh o soukromí -------- */
+.trust {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.trust svg { width: 72px; height: 72px; margin: 0 auto 28px; }
+
+.trust h2 { font-size: clamp(30px, 4.5vw, 44px); margin: 0 0 18px; }
+
+.trust p {
+  color: var(--text-muted);
+  font-size: 17px;
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+/* -------- FAQ -------- */
+.faq { max-width: 700px; margin: 0 auto; }
+
+.faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--display);
+  font-size: 19px;
+  color: var(--text);
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary .plus {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  position: relative;
+}
+
+.faq summary .plus::before,
+.faq summary .plus::after {
+  content: '';
+  position: absolute;
+  background: var(--brass);
+  transition: transform 0.2s ease;
+}
+
+.faq summary .plus::before { top: 50%; left: 0; width: 100%; height: 1.5px; transform: translateY(-50%); }
+.faq summary .plus::after { left: 50%; top: 0; height: 100%; width: 1.5px; transform: translateX(-50%); }
+
+.faq details[open] summary .plus::after { transform: translateX(-50%) rotate(90deg); opacity: 0; }
+
+.faq p {
+  margin-top: 14px;
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 60ch;
+}
+
+/* -------- kontakt -------- */
+.contact-box {
+  max-width: 700px;
+  margin: 56px auto 0;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.contact-box p { color: var(--text-muted); margin-bottom: 18px; }
+
+.contact-box a.mail {
+  font-family: var(--display);
+  font-size: 22px;
+  color: var(--brass);
+  text-decoration: none;
+}
+
+.contact-box a.mail:hover { text-decoration: underline; }
+
+/* -------- patička -------- */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+footer a { text-decoration: none; color: var(--text-faint); }
+footer a:hover, footer a:focus-visible { color: var(--brass); }
+
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+/* -------- scroll reveal (progresivní vylepšení) -------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* -------- stránka zásad -------- */
+.policy h2 {
+  font-size: 22px;
+  margin: 40px 0 12px;
+}
+
+.policy h2:first-child { margin-top: 0; }
+
+.policy p, .policy li {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.policy ul { padding-left: 20px; margin: 12px 0; }
+.policy li { margin-bottom: 6px; }
+.policy p { margin-bottom: 16px; }
+.policy strong { color: var(--text); }
+.policy code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.policy-date { color: var(--text-faint); font-size: 14px; margin-bottom: 40px; }
