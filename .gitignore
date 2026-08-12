@@ -1,0 +1,6 @@
+# Smetí macOS. Finder je sype do každé složky, kterou otevřeš, a ve
+# veřejném repozitáři nemají co dělat.
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
