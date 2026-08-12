@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jak dostat scénář do appky — Nazkoušeno</title>
+<meta name="description" content="Tři cesty, jak dostat scénář do appky Nazkoušeno: vybrat soubor, sdílet ho z jiné appky, nebo vložit text ze schránky. Se snímky z appky.">
+<!-- Cesty „soubor“ a „sdílení“ jsou z v1.1 (větev `import-v1.1`), která
+     v době vzniku stránky ještě nebyla v obchodech. Vydáno vědomě
+     dopředu (R58): web se nepropaguje, dokud v1.1 nevyjde, takže rozdíl
+     nikoho nezastihne. Až vyjde, tenhle komentář smazat. -->
+<meta name="theme-color" content="#12100E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Crect width='1024' height='1024' rx='180' fill='%2312100E'/%3E%3Cg transform='translate(599.0,204.8) rotate(9.17)'%3E%3Cpath d='M-125.4,-55.3 C-120.4,-141.3 -50.2,-159.7 0,-153.6 C50.2,-159.7 120.4,-141.3 125.4,-55.3 C120.4,55.3 65.2,135.2 0,153.6 C-65.2,135.2 -120.4,55.3 -125.4,-55.3 Z' fill='none' stroke='%236B5B3E' stroke-width='20.5'/%3E%3Cpath d='M-90.3,-30.7 Q-52.7,9.2 -15.1,-30.7 Q-52.7,-17.1 -90.3,-30.7 Z' fill='%236B5B3E'/%3E%3Cpath d='M15.1,-30.7 Q52.7,9.2 90.3,-30.7 Q52.7,-17.1 15.1,-30.7 Z' fill='%236B5B3E'/%3E%3Cpath d='M-52.7,67.6 Q0.0,15.4 52.7,67.6 Q0.0,49.8 -52.7,67.6 Z' fill='%236B5B3E'/%3E%3C/g%3E%3Cg transform='translate(435.2,250.9) rotate(-8.02)'%3E%3Cpath d='M-125.4,-55.3 C-120.4,-141.3 -50.2,-159.7 0,-153.6 C50.2,-159.7 120.4,-141.3 125.4,-55.3 C120.4,55.3 65.2,135.2 0,153.6 C-65.2,135.2 -120.4,55.3 -125.4,-55.3 Z M-90.3,-30.7 Q-52.7,-70.7 -15.1,-30.7 Q-52.7,-44.3 -90.3,-30.7 Z M15.1,-30.7 Q52.7,-70.7 90.3,-30.7 Q52.7,-44.3 15.1,-30.7 Z M-52.7,67.6 Q0.0,119.8 52.7,67.6 Q0.0,85.3 -52.7,67.6 Z' fill='%23E0B45E' fill-rule='evenodd'/%3E%3C/g%3E%3Cg stroke='%236B5B3E' stroke-width='34' stroke-linecap='round'%3E%3Cline x1='270' y1='471' x2='754' y2='471'/%3E%3Cline x1='270' y1='778' x2='754' y2='778'/%3E%3C/g%3E%3Crect x='212' y='591' width='42' height='68' fill='%23E0B45E'/%3E%3Cline x1='306' y1='625' x2='812' y2='625' stroke='%23E0B45E' stroke-width='52' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/site.css?v=5">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">
+      <img class="brand-mark" src="../assets/img/logo.svg" alt="" width="38" height="38">
+      <span>Nazkoušeno</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Návody</a>
+      <a href="../index.html">Zpět na web</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section style="padding-top:64px;">
+    <div class="container container--narrow">
+
+      <div class="guide-head">
+        <a class="crumb" href="index.html">← Návody</a>
+        <p class="eyebrow">Začínáme</p>
+        <h1>Jak dostat scénář do appky</h1>
+        <p>Tři cesty. Stačí ti jedna — vyber tu, která odpovídá tomu, kde scénář právě máš. Všechny končí stejně: vybereš svou roli a můžeš drilovat.</p>
+      </div>
+
+      <div class="ways">
+        <a class="way-link" href="#soubor">
+          <strong>Mám ho jako soubor</strong>
+          <span>Vybereš ho v appce</span>
+        </a>
+        <a class="way-link" href="#sdileni">
+          <strong>Mám ho otevřený jinde</strong>
+          <span>Sdílíš ho do appky</span>
+        </a>
+        <a class="way-link" href="#schranka">
+          <strong>Mám jen text</strong>
+          <span>Vložíš ho ze schránky</span>
+        </a>
+      </div>
+
+      <!-- Cesta 1 -->
+      <div class="way reveal" id="soubor">
+        <div class="way-body">
+          <p class="eyebrow">Cesta 1</p>
+          <h2>Vyber soubor v appce</h2>
+          <p class="lede">Nejkratší cesta, když už scénář v telefonu leží. Appka bere <strong>.doc</strong>, <strong>.docx</strong> a prostý text — tedy to, v čem scénáře po divadlech reálně kolují.</p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-marker"><div class="num">1</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Ulož scénář do telefonu</h3>
+                <p>Přílohu z mailu podrž a dej Uložit do Souborů. Když už soubor v telefonu máš, tenhle krok přeskoč.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">2</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Ťukni na Vybrat soubor se scénářem</h3>
+                <p>Hlavní tlačítko na úvodní obrazovce. Formát appka pozná podle obsahu souboru, ne podle přípony — u přeposílaných scénářů přípona často lže.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">3</div></div>
+              <div class="step-body">
+                <h3>Zkontroluj nález a vyber roli</h3>
+                <p>Appka ukáže obsazení, počet replik a místa, která jí přišla divná — třeba překlep ve jméně mluvčího. Opravíš je na jedno ťuknutí, vybereš svou roli a jsi hotový.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="way-visual">
+          <div class="phone">
+            <img src="../assets/img/navod/import-soubor.png" alt="Úvodní obrazovka appky Nazkoušeno s hlavním tlačítkem Vybrat soubor se scénářem a poznámkou, že appka bere .doc, .docx a prostý text." width="700" height="1522" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Cesta 2 -->
+      <div class="way reveal" id="sdileni">
+        <div class="way-body">
+          <p class="eyebrow">Cesta 2</p>
+          <h2>Sdílej scénář z appky, kde ho máš</h2>
+          <p class="lede">Když ho nechceš nikam ukládat. Funguje odkudkoli, kde je tlačítko Sdílet — z mailu, ze Souborů, z Wordu, z cloudového disku.</p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-marker"><div class="num">1</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Najdi scénář tam, kde ho máš</h3>
+                <p>Nemusíš ho kopírovat ani přesouvat. Zůstane, kde je.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">2</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Ťukni na Sdílet a vyber Nazkoušeno</h3>
+                <p>Když appku v řádku nevidíš, ťukni na Více a najdi ji v celém seznamu.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">3</div></div>
+              <div class="step-body">
+                <h3>Appka se otevře už se scénářem</h3>
+                <p>Odtud je to stejné jako u výběru souboru — kontrola nálezu, výběr role, hotovo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="way-visual">
+          <div class="phone">
+            <img src="../assets/img/navod/import-sdileni.png" alt="Systémové okno sdílení nad textovým dokumentem se scénářem, v nabídce cílů je appka Nazkoušeno." width="700" height="1522" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Cesta 3 -->
+      <div class="way reveal" id="schranka">
+        <div class="way-body">
+          <p class="eyebrow">Cesta 3</p>
+          <h2>Vlož text ze schránky</h2>
+          <p class="lede">Záchranná cesta pro všechno ostatní — PDF, zprávu v chatu, text z webu. Projde i tam, kde by appka soubor nepřečetla.</p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-marker"><div class="num">1</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Otevři scénář v telefonu</h3>
+                <p>Přílohu v mailu, soubor v Souborech nebo ve Wordu — kdekoli, kde jde text číst.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">2</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Vyber celý text a zkopíruj</h3>
+                <p>Podrž prst v textu, dej Vybrat vše a Kopírovat. Nevadí, když se přiberou i osoby a poznámky — appka si je roztřídí sama.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">3</div></div>
+              <div class="step-body">
+                <h3>V appce ťukni na Nemám soubor — vložím text</h3>
+                <p>A pak na Vložit ze schránky. Kdyby schránka nespolupracovala, jde text vložit i ručně do pole pod tím.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="way-visual">
+          <div class="phone">
+            <img src="../assets/img/navod/import-schranka.png" alt="Obrazovka importu v appce Nazkoušeno s rozbalenou cestou Vložení textu: tlačítko Vložit ze schránky a tři číslované kroky návodu." width="700" height="1522" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="policy" style="max-width:700px;margin:96px auto 0">
+        <h2>Když appka scénář nepřečte</h2>
+        <p>Appka pozná repliku podle toho, že je <strong>jméno mluvčího oddělené od textu</strong> — tabulátorem, několika mezerami, nebo dvojtečkou (<code>ANNA: text</code>). Vybere si tu konvenci, která ve scénáři převažuje, takže na pár řádcích, které vypadají jinak, nezáleží.</p>
+        <p>Co nestačí, je <strong>jediná mezera</strong> mezi jménem a textem — tak vypadá typicky kopie z PDF. Pak zkuste sehnat scénář ve Wordu; tak vám ho režisér nebo agentura nejspíš poslali.</p>
+        <p><strong>Nic tím nezkazíte.</strong> Když se text nepodaří rozdělit, appka to řekne rovnou a nic se neuloží. Zbytek odpovědí je v <a href="../index.html#podpora" style="color:var(--brass)">častých otázkách</a>.</p>
+
+        <h2>Scénář zůstane v telefonu</h2>
+        <p>Ať zvolíte kteroukoli cestu, text se zpracuje přímo na zařízení. Appka nemá server, nevolá žádné rozhraní a scénář nikam neodesílá — je to podmínka, ne funkce. Podrobně v <a href="../soukromi.html" style="color:var(--brass)">zásadách ochrany osobních údajů</a>.</p>
+      </div>
+
+      <div class="contact-box reveal">
+        <p>Něco v návodu nesedí, nebo appka dělá něco jiného?</p>
+        <a class="mail" href="mailto:contact@lukashula.cz">contact@lukashula.cz</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span class="footer-brand"><img class="footer-mark" src="../assets/img/logo.svg" alt="" width="26" height="26"><span>© 2026 Lukáš Hůla</span></span>
+    <div class="footer-links">
+      <a href="index.html">Návody</a>
+      <a href="../soukromi.html">Zásady ochrany osobních údajů</a>
+      <a href="mailto:contact@lukashula.cz">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Táž pojistka jako na úvodní stránce: `.reveal` je bez JS neviditelný,
+// takže co je v zorném poli hned při načtení, odkryje se bez animace.
+var revealEls = document.querySelectorAll('.reveal');
+function showNow(el) { el.classList.add('is-visible'); }
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { showNow(entry.target); io.unobserve(entry.target); }
+    });
+  }, { rootMargin: '0px 0px 300px 0px', threshold: 0 });
+  revealEls.forEach(function (el) {
+    if (el.getBoundingClientRect().top < window.innerHeight) { showNow(el); } else { io.observe(el); }
+  });
+  setTimeout(function () { revealEls.forEach(showNow); }, 5000);
+} else {
+  revealEls.forEach(showNow);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Návody — Nazkoušeno</title>
+<meta name="description" content="Návody k appce Nazkoušeno: jak dostat scénář do telefonu, vybrat roli a začít drilovat.">
+<meta name="theme-color" content="#12100E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Crect width='1024' height='1024' rx='180' fill='%2312100E'/%3E%3Cg transform='translate(599.0,204.8) rotate(9.17)'%3E%3Cpath d='M-125.4,-55.3 C-120.4,-141.3 -50.2,-159.7 0,-153.6 C50.2,-159.7 120.4,-141.3 125.4,-55.3 C120.4,55.3 65.2,135.2 0,153.6 C-65.2,135.2 -120.4,55.3 -125.4,-55.3 Z' fill='none' stroke='%236B5B3E' stroke-width='20.5'/%3E%3Cpath d='M-90.3,-30.7 Q-52.7,9.2 -15.1,-30.7 Q-52.7,-17.1 -90.3,-30.7 Z' fill='%236B5B3E'/%3E%3Cpath d='M15.1,-30.7 Q52.7,9.2 90.3,-30.7 Q52.7,-17.1 15.1,-30.7 Z' fill='%236B5B3E'/%3E%3Cpath d='M-52.7,67.6 Q0.0,15.4 52.7,67.6 Q0.0,49.8 -52.7,67.6 Z' fill='%236B5B3E'/%3E%3C/g%3E%3Cg transform='translate(435.2,250.9) rotate(-8.02)'%3E%3Cpath d='M-125.4,-55.3 C-120.4,-141.3 -50.2,-159.7 0,-153.6 C50.2,-159.7 120.4,-141.3 125.4,-55.3 C120.4,55.3 65.2,135.2 0,153.6 C-65.2,135.2 -120.4,55.3 -125.4,-55.3 Z M-90.3,-30.7 Q-52.7,-70.7 -15.1,-30.7 Q-52.7,-44.3 -90.3,-30.7 Z M15.1,-30.7 Q52.7,-70.7 90.3,-30.7 Q52.7,-44.3 15.1,-30.7 Z M-52.7,67.6 Q0.0,119.8 52.7,67.6 Q0.0,85.3 -52.7,67.6 Z' fill='%23E0B45E' fill-rule='evenodd'/%3E%3C/g%3E%3Cg stroke='%236B5B3E' stroke-width='34' stroke-linecap='round'%3E%3Cline x1='270' y1='471' x2='754' y2='471'/%3E%3Cline x1='270' y1='778' x2='754' y2='778'/%3E%3C/g%3E%3Crect x='212' y='591' width='42' height='68' fill='%23E0B45E'/%3E%3Cline x1='306' y1='625' x2='812' y2='625' stroke='%23E0B45E' stroke-width='52' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/site.css?v=5">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">
+      <img class="brand-mark" src="../assets/img/logo.svg" alt="" width="38" height="38">
+      <span>Nazkoušeno</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html">Zpět na web</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section style="padding-top:64px;">
+    <div class="container container--narrow">
+
+      <div class="guide-head">
+        <p class="eyebrow">Návody</p>
+        <h1>Jak na to</h1>
+        <p>Krok za krokem, se snímky z appky. Nic z toho nepotřebuješ přečíst dopředu — appka tě provede sama. Návody jsou tu pro chvíli, kdy něco nesedí.</p>
+      </div>
+
+      <div style="margin-top:56px">
+        <div class="guide-group reveal">
+          <p class="eyebrow">Začínáme</p>
+          <a class="guide-item" href="import-scenare.html">
+            <span>
+              <h3>Jak dostat scénář do appky</h3>
+              <p>Tři cesty: vybrat soubor, sdílet ho z appky, kde scénář máš, nebo vložit text ze schránky.</p>
+            </span>
+            <span class="go" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-box reveal">
+        <p>Návody přidáváme podle toho, na co se ptáte. Nenašli jste, co potřebujete?</p>
+        <a class="mail" href="mailto:contact@lukashula.cz">contact@lukashula.cz</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span class="footer-brand"><img class="footer-mark" src="../assets/img/logo.svg" alt="" width="26" height="26"><span>© 2026 Lukáš Hůla</span></span>
+    <div class="footer-links">
+      <a href="../soukromi.html">Zásady ochrany osobních údajů</a>
+      <a href="mailto:contact@lukashula.cz">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Táž pojistka jako na úvodní stránce: `.reveal` je bez JS neviditelný,
+// takže co je v zorném poli hned při načtení, odkryje se bez animace.
+var revealEls = document.querySelectorAll('.reveal');
+function showNow(el) { el.classList.add('is-visible'); }
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { showNow(entry.target); io.unobserve(entry.target); }
+    });
+  }, { rootMargin: '0px 0px 300px 0px', threshold: 0 });
+  revealEls.forEach(function (el) {
+    if (el.getBoundingClientRect().top < window.innerHeight) { showNow(el); } else { io.observe(el); }
+  });
+  setTimeout(function () { revealEls.forEach(showNow); }, 5000);
+} else {
+  revealEls.forEach(showNow);
+}
+</script>
+
+</body>
+</html>

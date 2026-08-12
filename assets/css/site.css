@@ -632,3 +632,141 @@ footer a:hover, footer a:focus-visible { color: var(--brass); }
 }
 
 .policy-date { color: var(--text-faint); font-size: 14px; margin-bottom: 40px; }
+
+/* -------- návody: rozcestník --------
+   Řádky s vlasovou linkou, ne krabice. Je to obsah programu — seznam
+   toho, co se dá přečíst — a stejný idiom jako FAQ, aby web nezaváděl
+   třetí druh seznamu pro tentýž účel. */
+.guide-group {
+  max-width: 700px;
+  margin: 0 auto 56px;
+}
+
+.guide-group:last-child { margin-bottom: 0; }
+
+.guide-group > .eyebrow { display: block; margin-bottom: 4px; }
+
+.guide-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.guide-item h3 {
+  font-size: 21px;
+  margin-bottom: 6px;
+  transition: color 0.2s ease;
+}
+
+.guide-item p {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 52ch;
+}
+
+.guide-item:hover h3,
+.guide-item:focus-visible h3 { color: var(--brass); }
+
+/* Šipka dává řádku význam odkazu i bez podtržení. */
+.guide-item .go {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--brass);
+  font-size: 20px;
+}
+
+/* -------- návod: hlavička stránky -------- */
+.guide-head { max-width: 700px; margin: 0 auto; }
+
+.guide-head h1 {
+  font-size: clamp(30px, 4.5vw, 44px);
+  margin: 14px 0;
+}
+
+.guide-head p {
+  color: var(--text-muted);
+  font-size: 17px;
+  max-width: 56ch;
+}
+
+.crumb {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--text-faint);
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.crumb:hover, .crumb:focus-visible { color: var(--brass); }
+
+/* -------- návod: volba cesty na začátku --------
+   Návod má tři samostatné cesty a čtenář potřebuje **jen jednu**.
+   Rozcestník na začátku ho pustí přímo k té své, aby nemusel projít
+   dvě, které ho netýkají. */
+.ways {
+  max-width: 700px;
+  margin: 36px auto 0;
+  display: grid;
+  gap: 10px;
+}
+
+@media (min-width: 780px) {
+  .ways { grid-template-columns: repeat(3, 1fr); }
+}
+
+.way-link {
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+
+.way-link:hover, .way-link:focus-visible { border-color: var(--brass); }
+
+.way-link strong {
+  display: block;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.way-link span { color: var(--text-faint); font-size: 13px; }
+
+/* -------- návod: jedna cesta -------- */
+.way {
+  display: grid;
+  gap: 40px;
+  align-items: start;
+  margin-top: 80px;
+}
+
+/* Zlom je vyšší než u `.feature` (780px): vedle kroků stojí telefon
+   v plné výšce, takže dva sloupce mají smysl teprve na širší obrazovce. */
+@media (min-width: 880px) {
+  .way { grid-template-columns: 1fr auto; gap: 56px; }
+}
+
+.way h2 {
+  font-size: clamp(24px, 3.4vw, 30px);
+  margin: 12px 0 18px;
+}
+
+.way .lede {
+  color: var(--text-muted);
+  font-size: 16px;
+  max-width: 46ch;
+  margin-bottom: 26px;
+}
+
+/* Kroky uvnitř cesty nesedí na středu sloupce a poslední nekopí
+   spodní odsazení, které jinde odděluje krok od dalšího. */
+.way .steps { max-width: none; margin: 0; }
+.way .step:last-child .step-body { padding-bottom: 0; }
+
+.way-visual { display: flex; justify-content: center; }
