@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Co appka ve scénáři pozná — Nazkoušeno</title>
+<meta name="description" content="Jak Nazkoušeno rozpozná postavy a repliky, co hlásí k potvrzení — překlepy ve jménech, repliky bez mluvčího, neuzavřené závorky — a jak se to opraví na jedno ťuknutí.">
+<meta name="theme-color" content="#12100E">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/site.css?v=5">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">
+      <img class="brand-mark" src="../assets/img/logo.svg" alt="" width="38" height="38">
+      <span>Nazkoušeno</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Návody</a>
+      <a href="../index.html">Zpět na web</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section style="padding-top:64px;">
+    <div class="container container--narrow">
+
+      <div class="guide-head">
+        <a class="crumb" href="index.html">← Návody</a>
+        <p class="eyebrow">Začínáme</p>
+        <h1>Co appka ve scénáři pozná</h1>
+        <p>Tady všechno začíná. Než se dostaneš k drilu, musí appka z jednoho dlouhého textu poznat, kdo mluví a kde končí replika — a přiznat se tam, kde si není jistá. Tahle stránka ukazuje, co v textu najde a co s tím můžeš udělat.</p>
+      </div>
+
+      <!-- Souhrn -->
+      <div class="way reveal">
+        <div class="way-body">
+          <p class="eyebrow">Hned po importu</p>
+          <h2>Obsazení, repliky, struktura</h2>
+          <p class="lede">Appka projede text a řekne, co v něm našla. Trvá to desítky milisekund, i u celé hry.</p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-marker"><div class="num">1</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Postavy si najde sama</h3>
+                <p>Podle toho, která jména se v textu opakují před replikou. Nepotřebuje seznam osob ani jednotný zápis — a když seznam osob v textu je, přibere z něj i postavu, která nemá ani jednu repliku.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">2</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Pozná dějství a scénické poznámky</h3>
+                <p>Hlavičky dějství, text v závorkách i samostatné poznámky mezi replikami. Poznámky se nedrilují a ve čtečce se sázejí kurzívou.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">3</div></div>
+              <div class="step-body">
+                <h3>Název hry odhadne, ty ho můžeš přepsat</h3>
+                <p>Bere ho z prvního řádku, takže někdy chytne jméno autora místo titulu. Pole je rovnou přepisovatelné — oprav ho hned, ať ti v knihovně nesvítí „Cast prvni.docx".</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="way-visual">
+          <div class="phone">
+            <img src="../assets/img/navod/rozpoznani-souhrn.png" alt="Potvrzovací obrazovka appky Nazkoušeno: nadpis Rozpoznáno, souhrn 6 postav a 46 replik, 2 dějství a 5 samostatných poznámek, přepisovatelné pole s názvem hry a seznam nálezů k potvrzení." width="700" height="1522" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Nálezy -->
+      <div class="way reveal">
+        <div class="way-body">
+          <p class="eyebrow">Nálezy</p>
+          <h2>Co appka nehádá, na to se zeptá</h2>
+          <p class="lede">Tam, kde si parser není jistý, nerozhoduje za tebe. Udělá nález a nabídne opravu. Nálezy jsou seskupené <strong>podle příčiny, ne podle řádku</strong> — dva stejné překlepy jsou jedna položka a jedno ťuknutí.</p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-marker"><div class="num">1</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Ukázat kde</h3>
+                <p>Rozbalí citace dotčených řádků s číslem, jak je počítá Word. Nejvýš pět, zbytek se přizná počtem.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">2</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Jedno ťuknutí, celá příčina</h3>
+                <p>U překlepu ve jméně je to <strong>Sloučit</strong>, u zdvojené repliky <strong>Smazat</strong>, jinde <strong>Rozumím</strong>. Sloučení přiřadí správné postavě všechny výskyty naráz.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">3</div></div>
+              <div class="step-body">
+                <h3>Nemusíš to řešit teď</h3>
+                <p>Ťuknutím na <strong>Zbytek vyřeším cestou</strong> se nálezy odklepnou naráz. Opravit cokoli půjde i potom, přímo v textu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="way-visual">
+          <div class="phone">
+            <img src="../assets/img/navod/rozpoznani-nalez.png" alt="Rozbalený nález v appce Nazkoušeno: hlášení „VIKTOK (2×) — je to VIKTOR?“ s tlačítkem Sloučit a dvěma citovanými řádky 58 a 60, u každého tužka pro opravu." width="700" height="1522" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="max-width:700px;margin:72px auto 0">
+        <p class="eyebrow" style="display:block;margin-bottom:18px">Deset věcí, které appka hlásí</p>
+        <div class="faq">
+          <details>
+            <summary>Překlep ve jméně postavy<span class="plus" aria-hidden="true"></span></summary>
+            <p>„VIKTOK" místo „VIKTOR". Appka to pozná podle toho, že se jméno objevuje řídce a správný tvar výrazně převažuje — dvě různé postavy s podobným jménem se slučovat nenabízejí. Nabídne <strong>Sloučit</strong>, což přiřadí všechny výskyty správné postavě.</p>
+          </details>
+          <details>
+            <summary>Replika bez uvedeného mluvčího<span class="plus" aria-hidden="true"></span></summary>
+            <p>Ve scénářích se jméno vynechává, když postava pokračuje po scénické poznámce. Appka repliku <strong>nezahodí ani neuhodne potichu</strong> — nechá ji a zeptá se, kdo ji říká. V náhledu je u ní <code>???</code>.</p>
+          </details>
+          <details>
+            <summary>Repliku říká víc postav najednou<span class="plus" aria-hidden="true"></span></summary>
+            <p>„ANNA a VIKTOR", „TOM+DICK". Zůstane sborová, dokud neřeknete jinak. V panelu opravy jde přiřadit jen jednomu.</p>
+          </details>
+          <details>
+            <summary>Dvě stejné repliky hned za sebou<span class="plus" aria-hidden="true"></span></summary>
+            <p>Skoro vždycky pozůstatek editace souboru, ne opakování ve hře. Nabídne <strong>Smazat</strong>.</p>
+          </details>
+          <details>
+            <summary>Text v lomítkách<span class="plus" aria-hidden="true"></span></summary>
+            <p><code>/za dveřmi/</code> může být scénická poznámka, ale taky překlad cizí řeči, který se má hrát. Appka nerozhodne za vás a nabídne přeznačení na poznámku.</p>
+          </details>
+          <details>
+            <summary>Neuzavřená závorka<span class="plus" aria-hidden="true"></span></summary>
+            <p>Když poznámka nemá konec, vezme se do konce repliky. Appka to přizná, ať se nestane, že se místo textu naučíte scénickou poznámku.</p>
+          </details>
+          <details>
+            <summary>Řádek, který se nepodařilo zařadit<span class="plus" aria-hidden="true"></span></summary>
+            <p>Patičky, doložky agentur, čísla stran — věci, které do hry nepatří, ale bývají uprostřed textu. Appka je nezařadí a řekne to; může se pod tím ale skrývat i ztracená replika, proto na to upozorní.</p>
+          </details>
+          <details>
+            <summary>Úvod hry<span class="plus" aria-hidden="true"></span></summary>
+            <p>Titul, autor, seznam osob, popis scény. <strong>Není to chyba</strong> — jen se to nedá zařadit mezi repliky, tak to appka vyjmenuje, abyste věděli, co s tím udělala.</p>
+          </details>
+          <details>
+            <summary>Nerozpoznala se žádná postava<span class="plus" aria-hidden="true"></span></summary>
+            <p>Skoro vždycky to znamená, že je vzorek moc krátký. Rozpoznávání stojí na tom, že se jméno opakuje, takže u jedné scény se nenasbírá dost. Vložte celou hru, ne jedno dějství.</p>
+          </details>
+          <details>
+            <summary>Text se nepodařilo rozdělit na repliky<span class="plus" aria-hidden="true"></span></summary>
+            <p>Textu je dost, ale nejde v něm najít, čím se jméno odděluje od řeči. Musí to být <strong>tabulátor, několik mezer, nebo dvojtečka</strong>. Jedna mezera bez dvojtečky nestačí — tak vypadá typicky kopie z PDF.</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Oprava -->
+      <div class="way reveal">
+        <div class="way-body">
+          <p class="eyebrow">Oprava</p>
+          <h2>Opravíš to rovnou u nálezu</h2>
+          <p class="lede">Tužka u citovaného řádku otevře stejný panel, jaký má čtečka i dril. Nemusíš nikam odcházet a nic hledat.</p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-marker"><div class="num">1</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Text i mluvčí</h3>
+                <p>Text repliky se dá přepsat a mluvčího vybereš ťuknutím na jméno. U sborové repliky nechá appka výběr prázdný, dokud si nevybereš.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">2</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Není to replika, ale poznámka</h3>
+                <p>Přeznačí řádek na scénickou poznámku. Zmizí z drilu a bude se sázet kurzívou — na světelné pokyny přesně to, co je potřeba.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">3</div></div>
+              <div class="step-body">
+                <h3>Přidat, rozdělit, smazat</h3>
+                <p>Když parser repliku ztratil, dopíšeš ji. Dlouhou repliku rozdělíš tam, kde máš kurzor. Smazání je pro řádky, které do hry nepatří — <strong>škrt je něco jiného</strong>, ten se sdílí se souborem.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="way-visual">
+          <div class="phone">
+            <img src="../assets/img/navod/rozpoznani-oprava.png" alt="Panel Opravit repliku v appce Nazkoušeno: pole s textem repliky, výběr mluvčího z jmen postav a další opravy — přeznačit na poznámku, přidat repliku, smazat repliku." width="700" height="1522" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Náhled -->
+      <div class="way reveal">
+        <div class="way-body">
+          <p class="eyebrow">Náhled</p>
+          <h2>Podíváš se, jak to vypadá v textu</h2>
+          <p class="lede">Ťuknutí na citaci otevře scénář na tom řádku. U „kdo to říká" totiž rozhoduje kontext okolních replik, ne jeden řádek vytržený z textu.</p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-marker"><div class="num">1</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Otevře se na správném místě</h3>
+                <p>Dotčený řádek je zvýrazněný zlatou linkou a stojí ve čtvrtině obrazovky, takže je nad ním vidět, co mu předchází.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">2</div></div>
+              <div class="step-body">
+                <h3>Opravit jde i odsud</h3>
+                <p>Ťuknutím na kteroukoli repliku otevřeš tentýž panel opravy. Až se vrátíš, nálezy se přepočítají — a ty, kterým jsi odebral příčinu, zmizí samy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="way-visual">
+          <div class="phone">
+            <img src="../assets/img/navod/rozpoznani-nahled.png" alt="Náhled scénáře v appce Nazkoušeno: jména postav zlatými verzálkami, scénické poznámky kurzívou, hlavička druhého dějství a zvýrazněný řádek, ze kterého se do náhledu skočilo." width="700" height="1522" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Role -->
+      <div class="way reveal">
+        <div class="way-body">
+          <p class="eyebrow">Poslední krok</p>
+          <h2>Vybereš svou roli</h2>
+          <p class="lede">Postavy jsou seřazené od nejupovídanější a u každé je počet replik a dvě ukázky, ať poznáš tu svoji i u jmen, která se v textu píšou různě.</p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-marker"><div class="num">1</div><div class="line"></div></div>
+              <div class="step-body">
+                <h3>Počet replik napoví</h3>
+                <p>Hlavní role mívá stovky, epizodní jednotky. Když u své role vidíš podezřele málo, nejspíš zbývá vyřídit nález s překlepem ve jméně.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-marker"><div class="num">2</div></div>
+              <div class="step-body">
+                <h3>Nula replik není chyba</h3>
+                <p>Postava ze seznamu osob, kterou parser nenašel v dialogu, se ukáže s nulou. Buď v úryvku nemluví, nebo se v textu píše jinak než v seznamu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="way-visual">
+          <div class="phone">
+            <img src="../assets/img/navod/rozpoznani-role.png" alt="Výběr role v appce Nazkoušeno: karty postav s počtem replik a dvěma ukázkovými replikami, od ANNY s dvaceti replikami po POŠŤÁKA s nulou." width="700" height="1522" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="policy" style="max-width:700px;margin:96px auto 0">
+        <h2>Proč to appka radši přizná, než uhodne</h2>
+        <p>Rozpoznávání je <strong>deterministické</strong> — žádná umělá inteligence, žádné dohadování. Je to záměr, ne omezení: halucinovanou repliku byste se naučili a zjistili to na zkoušce. Proto parser tam, kde si není jistý, nerozhodne za vás, ale nález ohlásí a nabídne opravu na jedno ťuknutí.</p>
+        <p>Ze stejného důvodu se <strong>za opravu vad importu nikdy neplatí</strong>. Editace replik, slučování jmen i oprava mluvčího jsou v základní verzi a zůstanou v ní — je to náprava toho, co appka nezvládla, ne prémiová funkce.</p>
+        <p>A celé se to děje <strong>ve vašem telefonu</strong>. Text se nikam neodesílá, appka nemá server. Podrobně v <a href="../soukromi.html" style="color:var(--brass)">zásadách ochrany osobních údajů</a>.</p>
+
+        <h2>Když appka scénář nepřečte</h2>
+        <p>Jméno postavy musí být od textu oddělené tabulátorem, několika mezerami, nebo dvojtečkou. Když se text nepodaří rozdělit, appka to řekne rovnou a nic se neuloží — nic tím nezkazíte. Podrobnosti o formátech jsou v návodu <a href="import-scenare.html" style="color:var(--brass)">Jak dostat scénář do appky</a>.</p>
+      </div>
+
+      <div class="contact-box reveal">
+        <p>Našla appka ve vašem scénáři něco, čemu nerozumíte?</p>
+        <a class="mail" href="mailto:contact@lukashula.cz">contact@lukashula.cz</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span class="footer-brand"><img class="footer-mark" src="../assets/img/logo.svg" alt="" width="26" height="26"><span>© 2026 Lukáš Hůla</span></span>
+    <div class="footer-links">
+      <a href="index.html">Návody</a>
+      <a href="../soukromi.html">Zásady ochrany osobních údajů</a>
+      <a href="mailto:contact@lukashula.cz">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Táž pojistka jako na úvodní stránce: `.reveal` je bez JS neviditelný,
+// takže co je v zorném poli hned při načtení, odkryje se bez animace.
+var revealEls = document.querySelectorAll('.reveal');
+function showNow(el) { el.classList.add('is-visible'); }
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { showNow(entry.target); io.unobserve(entry.target); }
+    });
+  }, { rootMargin: '0px 0px 300px 0px', threshold: 0 });
+  revealEls.forEach(function (el) {
+    if (el.getBoundingClientRect().top < window.innerHeight) { showNow(el); } else { io.observe(el); }
+  });
+  setTimeout(function () { revealEls.forEach(showNow); }, 5000);
+} else {
+  revealEls.forEach(showNow);
+}
+</script>
+
+</body>
+</html>
