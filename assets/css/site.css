@@ -31,9 +31,19 @@
 
   --display: 'Jost', serif;
   --ui: 'Inter', sans-serif;
+
+  /* Výška lepivé hlavičky. Řídí zároveň odsazení kotev — viz `html` níž. */
+  --header-h: 68px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Kotvy nesmí skončit pod lepivou hlavičkou.
+   `scroll-padding-top` říká prohlížeči, kde má scrollování „dosednout" —
+   platí na skok na `#kotvu` i na `scrollIntoView`, takže se to nemusí
+   řešit u každého cíle zvlášť. Výška hlavičky plus linka pod ní a ještě
+   kousek vzduchu, aby nadpis nelepil na okraj. */
+html { scroll-padding-top: calc(var(--header-h) + 26px); }
 
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
@@ -127,7 +137,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
+  height: var(--header-h);
 }
 
 .brand {
