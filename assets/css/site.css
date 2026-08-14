@@ -332,46 +332,25 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   margin-top: 26px;
 }
 
-.store {
+/* Oficiální odznaky obchodů. Stažené z marketingových nástrojů Applu
+   a Googlu v české verzi — obojí má závazná pravidla: kresba, barvy ani
+   proporce se nesmí měnit a kolem odznaku musí zůstat volný prostor.
+   Proto tu není vlastní rámeček ani podklad, jen odkaz a obrázek.
+
+   Výšky se liší schválně. Google dodává asset s ochrannou zónou
+   zapečenou v obrázku (nahoře i dole 29 z 250 px, tedy vlastní odznak
+   je 76,8 % výšky), Apple ne — při stejné hodnotě `height` by Google
+   odznak vypadal menší. 44 / 0,768 ≈ 57. */
+.store-badge {
   display: inline-flex;
-  align-items: center;
-  gap: 13px;
-  padding: 13px 24px 13px 20px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03);
   text-decoration: none;
-  color: var(--text);
-  transition: border-color 0.18s ease, background 0.18s ease;
+  border-radius: 8px;
 }
 
-.store:hover,
-.store:focus-visible {
-  border-color: rgba(224, 180, 94, 0.5);
-  background: rgba(224, 180, 94, 0.06);
-}
+.store-badge img { display: block; width: auto; }
 
-.store-mark {
-  width: 30px;
-  height: 30px;
-  fill: currentColor;
-  flex-shrink: 0;
-}
-
-.store-text { display: flex; flex-direction: column; line-height: 1.15; }
-
-.store-small {
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.store-big {
-  font-family: var(--display);
-  font-size: 20px;
-  letter-spacing: 0.01em;
-}
+.store-badge--apple img { height: 44px; }
+.store-badge--google img { height: 57px; }
 
 .hero-visual {
   display: flex;
