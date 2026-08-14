@@ -325,9 +325,15 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
    Zástupné, dokud nejsou odkazy. Před vydáním se **musí vyměnit za
    oficiální artwork** Applu a Googlu: obojí má závazná pravidla pro
    použití svých značek a vlastní kresba loga je porušuje. */
+/* `align-items: center` je tu nutnost, ne kosmetika. Odznaky mají různou
+   výšku boxu (Google nese ochrannou zónu uvnitř obrázku), takže by je
+   výchozí `stretch` postavil na společný horní okraj a Apple by seděl
+   výš. Na střed sedí i samotné odznaky, protože Googlu je zóna nahoře
+   i dole stejná. */
 .stores {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 12px;
   margin-top: 26px;
 }
